@@ -14,18 +14,59 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 body {
     color: #333333;
+    background-color: #71995d;
     font-family: 'Roboto', sans-serif;
     font-size: 19px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Trykker', serif;
-    /* color: #71995d; */
+    color: #71995d;
 }
 
-main,
-footer {
+a, a:link, a:visited {
+    color: #71995d;
+}
+a:hover, a:active {
+    color: #aad197;
+}
+
+header {
+    text-align: center;
+    background: transparent url(../img/header-1600.jpg) no-repeat center bottom;
+    height: 300px;
+}
+
+.title {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem 1.2rem 2rem;
+    border-radius: 2.5rem;
+    background-color: rgba(33, 33, 33, 0.7);
+    display: inline-block;
+    color: #aad197;
+}
+.title h1 {
+    color: #aad197;
+    margin: 0.2em 0;
+}
+
+main {
+    background-color: white;
     max-width: 38rem;
     padding: 2rem;
+    border-radius: 2.5rem;
+    /* border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem; */
     margin: auto;
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+main, footer {
+    position: relative;
+    top: -2.5rem;
 }
