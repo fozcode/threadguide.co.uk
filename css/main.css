@@ -52,11 +52,9 @@ header {
 
 main {
     background-color: white;
-    max-width: 38rem;
+    max-width: 50rem;
     padding: 2rem;
     border-radius: 2.5rem;
-    /* border-bottom-left-radius: 2.5rem;
-    border-bottom-right-radius: 2.5rem; */
     margin: auto;
 }
 
@@ -69,4 +67,34 @@ footer {
 main, footer {
     position: relative;
     top: -2.5rem;
+}
+
+section {
+    margin-top: 3rem;
+}
+
+.headline {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    grid-gap: 1rem 2rem;
+}
+
+.picture {
+    vertical-align: top;
+    min-width: 100px;
+    max-width: 400px;
+}
+.picture img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 450px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }    
 }
