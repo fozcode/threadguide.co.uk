@@ -31,55 +31,19 @@ body.theme-3 h1, body.theme-3 h2, body.theme-3 h3, body.theme-3 h4, body.theme-3
     font-family: 'Charm', serif;
     text-transform: none;
 }
-body.theme-3 h1 { font-size: 300%; } body.theme-3 h2 { font-size: 200%; }
+body.theme-3 h1 { font-size: 350%; } body.theme-3 h2 { font-size: 200%; }
 body.theme-3 {
     font-family: 'Roboto', sans-serif;
 }
 
-.layout-2 .title {
-    margin-top: 330px;
-    padding: 0;
-    border-radius: 0;
-    background-color: transparent;
-    display: inline-block;
-    color: #71995d;
-}
-.layout-2 .title h1 {
-    color: #71995d;
-    margin: 0.2em 0;
-    font-size: 300%;
-}
-.layout-2 main {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    padding-top: 160px;
-}
-.layout-2 main,
-.layout-2 footer {
-    position: static;
-    top: 0;
-}
-@media only screen and (max-width: 530px) {
-    .layout-2 main {
-        padding-top: 220px;
-    }    
-}
-@media only screen and (max-width: 480px) {
-    .layout-2 main {
-        padding-top: 250px;
-    }    
-}
-@media only screen and (max-width: 390px) {
-    .layout-2 main {
-        padding-top: 300px;
-    }    
-}
+body.try-shadow h1 { text-shadow: 1px 2px 3px #555555; }
 
 /* END temp themese */
 
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 19px;
+    line-height: 1.5;
     color: #333333;
     background-color: #71995d;
     scroll-behavior: smooth;
@@ -100,29 +64,20 @@ a:hover, a:active {
 
 header {
     text-align: center;
-    background: transparent url(../img/header-1600.jpg) no-repeat center bottom;
-    height: 300px;
+    background: transparent url(../img/header-1200.jpg) no-repeat center bottom;
+    height: 200px;
 }
 
-.title {
-    margin-top: 4rem;
-    padding: 0.8rem 2rem 1.2rem 2rem;
-    border-radius: 2.5rem;
-    background-color: rgba(33, 33, 33, 0.7);
-    display: inline-block;
-    color: #aad197;
-}
-.title h1 {
-    color: #aad197;
-    margin: 0.2em 0;
+header, main, footer {
+    max-width: 1024px;
+    padding: 2rem;
+    margin: auto;
 }
 
 main {
     background-color: white;
-    max-width: 50rem;
-    padding: 2rem;
     border-radius: 2.5rem;
-    margin: auto;
+    padding-top: 0.5rem;
 }
 
 main, footer {
@@ -130,13 +85,34 @@ main, footer {
     top: -2.5rem;
 }
 
+nav {
+    width: 100%;
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    margin-right: 10%;
+}
+nav a:last-child {
+    margin-right: 0;
+}
+
 section {
     margin-top: 3rem;
 }
 
-.headline {
-    margin-top: 1rem;
+.title, .headline {
     text-align: center;
+}
+.title {
+    margin-top: 2rem;
+    color: #71995d;
+}
+.title h1 {
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 0.5rem;
 }
 
 .columns {
@@ -155,7 +131,7 @@ section {
 }
 
 .social-media {
-    line-height: 2;
+    line-height: 2.5;
 }
 .social-media img {
     width: 32px;
