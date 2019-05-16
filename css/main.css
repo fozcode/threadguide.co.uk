@@ -1,40 +1,7 @@
-/*
-In the beginning...
-
-Light green text on front is #aad196
-Darker green text on back is #71995d
-Body text is #333333
-All other colour comes from photos.
-Main font is Liberation Sans
-Extra font is Segoe Print
-*/
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
 
 /* START temp themes */
-body.theme-1 h1, body.theme-1 h2, body.theme-1 h3, body.theme-1 h4, body.theme-1 h5, body.theme-1 h6 {
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-}
-body.theme-1 {
-    font-family: 'Open Sans', sans-serif;
-}
-body.theme-2 h1, body.theme-2 h2, body.theme-2 h3, body.theme-2 h4, body.theme-2 h5, body.theme-2 h6 {
-    font-family: 'Trykker', serif;
-    text-transform: uppercase;
-}
-body.theme-2 {
-    font-family: 'Roboto', sans-serif;
-}
-body.theme-3 h1, body.theme-3 h2, body.theme-3 h3, body.theme-3 h4, body.theme-3 h5, body.theme-3 h6 {
-    font-family: 'Charm', serif;
-    text-transform: none;
-}
-body.theme-3 h1 { font-size: 350%; } body.theme-3 h2 { font-size: 200%; }
-body.theme-3 {
-    font-family: 'Roboto', sans-serif;
-}
 
 body.try-shadow h1 { text-shadow: 1px 2px 3px #555555; }
 
@@ -45,7 +12,7 @@ body {
     font-size: 19px;
     line-height: 1.5;
     color: #333333;
-    background-color: #71995d;
+    background-color: white;
     scroll-behavior: smooth;
 }
 
@@ -65,24 +32,21 @@ a:hover, a:active {
 header {
     text-align: center;
     background: transparent url(../img/header-1200.jpg) no-repeat center bottom;
-    height: 200px;
+    height: 240px;
 }
-
+header, footer {
+    background-color: #71995d;
+}
 header, main, footer {
-    max-width: 1024px;
-    padding: 2rem;
+    max-width: 1000px;
+    padding: 0 2rem;
     margin: auto;
 }
 
 main {
     background-color: white;
-    border-radius: 2.5rem;
     padding-top: 0.5rem;
-}
-
-main, footer {
-    position: relative;
-    top: -2.5rem;
+    padding-bottom: 2rem;
 }
 
 nav {
@@ -113,6 +77,13 @@ section {
     font-weight: bold;
     line-height: 1;
     margin-bottom: 0.5rem;
+}
+
+.rule {
+    margin: 0;
+    padding: 0;
+    height: 2rem;
+    background-color: #71995d;
 }
 
 .columns {
@@ -150,9 +121,10 @@ section {
 }
 
 footer {
-    padding: 2rem;
     text-align: center;
     color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 footer a,
 footer a:link,
@@ -171,6 +143,13 @@ footer a:active {
     color: #333333;
 }
 
+@media only screen and (min-width: 1040px) {
+    header, main, footer {
+        /* Side padding comes for free, align all left and right edges */
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 @media only screen and (max-width: 450px) {
     .columns {
         /* switch to single column mode */
