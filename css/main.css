@@ -34,19 +34,17 @@ header {
     background: transparent url(../img/header-1200.jpg) no-repeat center bottom;
     height: 240px;
 }
-header, footer {
-    background-color: #71995d;
-}
 header, main, footer {
     max-width: 1000px;
-    padding: 0 2rem;
     margin: auto;
+}
+header, footer {
+    background-color: #71995d;
 }
 
 main {
     background-color: white;
-    padding-top: 0.5rem;
-    padding-bottom: 2rem;
+    padding: 0.5rem 2rem 2rem 2rem;
 }
 
 nav {
@@ -123,8 +121,7 @@ section {
 footer {
     text-align: center;
     color: white;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
 }
 footer a,
 footer a:link,
