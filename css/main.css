@@ -14,6 +14,16 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     color: #71995d;
+    line-height: 1;
+}
+h2::before {
+    content: "";
+    display: inline-block;
+    background: transparent url(../img/sewing-machine.png) no-repeat left bottom;
+    background-size: 0.92em 0.92em;
+    width: 1em;
+    height: 1em;
+    margin: 0 0.35em 0 0;
 }
 
 a, a:link, a:visited {
@@ -57,7 +67,7 @@ section {
     margin-top: 3rem;
 }
 
-.title, .headline {
+.title {
     text-align: center;
 }
 .title {
@@ -67,7 +77,6 @@ section {
 .title h1 {
     font-size: 3em;
     font-weight: bold;
-    line-height: 1;
     margin-bottom: 0.5rem;
 }
 
