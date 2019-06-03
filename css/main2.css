@@ -35,15 +35,18 @@ a:hover, a:active {
 
 header {
     text-align: center;
-    background: transparent url(../img/header-1200.jpg) no-repeat center bottom;
-    height: 240px;
 }
 header, main, footer {
     max-width: 1000px;
     margin: auto;
 }
-header, footer {
+footer {
     background-color: #71995d;
+}
+
+.banner {
+    background: transparent url(../img/header-1200.jpg) no-repeat center bottom;
+    height: 280px;
 }
 
 main {

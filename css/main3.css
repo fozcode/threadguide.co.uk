@@ -35,15 +35,46 @@ a:hover, a:active {
 
 header {
     text-align: center;
-    background: transparent url(../img/header-1200.jpg) no-repeat center bottom;
-    height: 240px;
+    background-color: #71995d;
+}
+header a, header a:link, header a:visited {
+    color: white;
+}
+header a:hover, header a:active {
+    color: #aad197;
 }
 header, main, footer {
     max-width: 1000px;
     margin: auto;
 }
-header, footer {
+footer {
     background-color: #71995d;
+}
+
+.header-columns {
+    display: grid;
+    grid-template-columns: 1fr 17em;
+    grid-gap: 1rem 1rem;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    padding: 1rem 1rem 1rem 2rem;
+    text-align: left;
+}
+.title h1 {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.banner {
+    background: transparent url(../img/header-1200.jpg) no-repeat center bottom;
+    height: 280px;
 }
 
 main {
@@ -65,32 +96,6 @@ nav a:last-child {
 
 section {
     margin-top: 3rem;
-}
-
-.title {
-    text-align: center;
-}
-.title {
-    margin-top: 2rem;
-    color: #71995d;
-}
-.title h1 {
-    font-size: 3em;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.rule {
-    margin: 0;
-    padding: 0;
-    height: 2rem;
-    background-color: #71995d;
-}
-.rule a, .rule a:link, .rule a:visited {
-    color: white;
-}
-.rule a:hover, .rule a:active {
-    color: #aad197;
 }
 
 .columns {
@@ -154,6 +159,14 @@ footer a:active {
         /* Side padding comes for free, align all left and right edges */
         padding-left: 0;
         padding-right: 0;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .header-columns {
+        grid-template-columns: 1fr 8em;
+    }
+    nav a:last-child {
+        margin-right: 10%;
     }
 }
 @media only screen and (max-width: 450px) {
