@@ -29,6 +29,9 @@ jobs:
         run: echo "$WEB_SERVER_SSH_PUB_KEY" > $HOME/.ssh/id_webserver.pub
 
       - name: setup server access 3
+        run: chmod 600 $HOME/.ssh/id_webserver.pub
+
+      - name: setup server access 4
         run: ssh-keyscan -H fozard.net > $HOME/.ssh/known_hosts
 
       - name: rsync the files to the server
