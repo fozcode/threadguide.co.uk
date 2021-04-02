@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Auto-deploy release
+
+# Controls when the action will run. 
+on:
+  # New release published
+  release:
+    types: [published]
+  # Manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    # Sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: setup server access 1
+        run: mkdir $HOME/.ssh
+
+      - name: setup server access 2
+        env:
+          WEB_SERVER_SSH_PUB_KEY: ${{ secrets.WEB_SERVER_SSH_PUB_KEY }}
+        run: echo "$WEB_SERVER_SSH_PUB_KEY" > $HOME/.ssh/id_webserver.pub
+
+      - name: rsync the files to the server
+        run: rsync -avz -e "ssh -i $HOME/.ssh/id_webserver.pub" --exclude-from=.rsyncignore ./* matt@fozard.net:/var/www/threadguide/
+        working-directory: ${{ github.workspace }}
