@@ -25,11 +25,12 @@ jobs:
 
       - name: setup server access 2
         env:
-          WEB_SERVER_SSH_KEY: ${{ secrets.WEB_SERVER_SSH_KEY }}
-        run: echo "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver
+          WEB_SERVER_PUB_KEY: "${{ secrets.WEB_SERVER_PUB_KEY }}"
+          WEB_SERVER_SSH_KEY: "${{ secrets.WEB_SERVER_SSH_KEY }}"
+        run: echo "$WEB_SERVER_PUB_KEY" > $HOME/.ssh/id_webserver.pub && echo "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver
 
       - name: setup server access 3
-        run: chmod 600 $HOME/.ssh/id_webserver
+        run: chmod 600 $HOME/.ssh/id_webserver.pub && chmod 600 $HOME/.ssh/id_webserver
 
       - name: setup server access 4
         run: ssh-keyscan -H fozard.net > $HOME/.ssh/known_hosts
