@@ -1,4 +1,5 @@
 _photos
+.github
 .gitignore
 .rsyncignore
 README.md
