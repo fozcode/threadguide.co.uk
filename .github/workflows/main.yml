@@ -26,14 +26,14 @@ jobs:
       - name: setup server access 2
         env:
           WEB_SERVER_SSH_PUB_KEY: ${{ secrets.WEB_SERVER_SSH_PUB_KEY }}
-        run: echo "$WEB_SERVER_SSH_PUB_KEY" > $HOME/.ssh/id_webserver.pub
+        run: echo "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver
 
       - name: setup server access 3
-        run: chmod 600 $HOME/.ssh/id_webserver.pub
+        run: chmod 600 $HOME/.ssh/id_webserver
 
       - name: setup server access 4
         run: ssh-keyscan -H fozard.net > $HOME/.ssh/known_hosts
 
       - name: rsync the files to the server
-        run: rsync -avz -e "ssh -i $HOME/.ssh/id_webserver.pub" --exclude-from=.rsyncignore ./* matt@fozard.net:/var/www/threadguide/
+        run: rsync -avz -e "ssh -i $HOME/.ssh/id_webserver" --exclude-from=.rsyncignore ./* matt@fozard.net:/var/www/threadguide/
         working-directory: ${{ github.workspace }}
