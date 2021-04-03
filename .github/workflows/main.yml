@@ -30,7 +30,7 @@ jobs:
         run: echo "$WEB_SERVER_PUB_KEY" > $HOME/.ssh/id_webserver.pub && echo "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver
 
       - name: Test
-        run: cat $HOME/.ssh/id_webserver
+        run: ls -l $HOME/.ssh/
 
       - name: setup server access 3
         run: chmod 600 $HOME/.ssh/id_webserver.pub && chmod 600 $HOME/.ssh/id_webserver
