@@ -22,22 +22,27 @@ jobs:
 
       - name: setup server access 1
         run: mkdir $HOME/.ssh
+        shell: bash
 
       - name: setup server access 2
         env:
-          WEB_SERVER_PUB_KEY: ${{ secrets.WEB_SERVER_PUB_KEY }}
           WEB_SERVER_SSH_KEY: ${{ secrets.WEB_SERVER_SSH_KEY }}
-        run: printf "$WEB_SERVER_PUB_KEY" > $HOME/.ssh/id_webserver.pub && printf "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver
+        run: 'printf "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver'
+        shell: bash
 
       - name: Test
         run: ls -l $HOME/.ssh/ && echo "Start" && cat $HOME/.ssh/id_webserver && echo "End"
+        shell: bash
 
       - name: setup server access 3
-        run: chmod 600 $HOME/.ssh/id_webserver.pub && chmod 600 $HOME/.ssh/id_webserver
+        run: chmod 600 $HOME/.ssh/id_webserver
+        shell: bash
 
       - name: setup server access 4
-        run: ssh-keyscan -H fozard.net > $HOME/.ssh/known_hosts
+        run: 'ssh-keyscan -H fozard.net > $HOME/.ssh/known_hosts'
+        shell: bash
 
       - name: rsync the files to the server
         run: rsync -avz -e "ssh -i $HOME/.ssh/id_webserver" --exclude-from=.rsyncignore ./* matt@fozard.net:/var/www/threadguide/
         working-directory: ${{ github.workspace }}
+        shell: bash
