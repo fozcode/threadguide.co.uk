@@ -28,7 +28,7 @@ jobs:
       - name: setup server access 2
         env:
           WEB_SERVER_SSH_KEY: ${{ secrets.WEB_SERVER_SSH_KEY }}
-        run: 'printf "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver'
+        run: 'echo "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver'
         shell: bash
 
       - name: setup server access 3
