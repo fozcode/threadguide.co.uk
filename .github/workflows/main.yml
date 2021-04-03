@@ -27,10 +27,10 @@ jobs:
         env:
           WEB_SERVER_PUB_KEY: ${{ secrets.WEB_SERVER_PUB_KEY }}
           WEB_SERVER_SSH_KEY: ${{ secrets.WEB_SERVER_SSH_KEY }}
-        run: echo "$WEB_SERVER_PUB_KEY" > $HOME/.ssh/id_webserver.pub && echo "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver
+        run: printf "$WEB_SERVER_PUB_KEY" > $HOME/.ssh/id_webserver.pub && printf "$WEB_SERVER_SSH_KEY" > $HOME/.ssh/id_webserver
 
       - name: Test
-        run: ls -l $HOME/.ssh/
+        run: ls -l $HOME/.ssh/ && echo "Start" && cat $HOME/.ssh/id_webserver && echo "End"
 
       - name: setup server access 3
         run: chmod 600 $HOME/.ssh/id_webserver.pub && chmod 600 $HOME/.ssh/id_webserver
